@@ -15,7 +15,7 @@ includelib \masm32\lib\msvcrt.lib ; include the C runtime library
     buffer db 11 dup(?) ; buffer for storing the date string
 
 .code
-printf proto C :dword, :vararg          ; prototype for the printf function
+;printf proto C :dword, :vararg          ; prototype for the printf function
 ExitProcess proto STDCALL :DWORD        ; prototype for the ExitProcess function
 OpenClipboard proto :DWORD
 EmptyClipboard proto
