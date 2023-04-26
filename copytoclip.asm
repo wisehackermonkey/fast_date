@@ -34,7 +34,7 @@ main PROC
     invoke GetDateFormat, LOCALE_USER_DEFAULT, 0, ADDR SystemTime, NULL, ADDR buffer, 11
 
     ; print the date string to the console using printf
-    ;invoke printf, ADDR message, ADDR buffer
+    invoke printf, ADDR message, ADDR buffer
 
     ; open the clipboard and empty its contents
     invoke OpenClipboard, NULL
