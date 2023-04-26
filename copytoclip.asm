@@ -24,17 +24,17 @@ SetClipboardData proto :DWORD, :DWORD
 CloseClipboard proto
 
 main PROC
-    LOCAL SystemTime:SYSTEMTIME
+    LOCAL LocalTime:SYSTEMTIME
     LOCAL hGlobal:DWORD
 
-    ; get the current system time
-    invoke GetSystemTime, ADDR SystemTime
+    ; get the current local time
+    invoke GetLocalTime, ADDR LocalTime
 
-    ; format the system time as a date string
-    invoke GetDateFormat, LOCALE_USER_DEFAULT, 0, ADDR SystemTime, NULL, ADDR buffer, 11
+    ; format the local time as a date string
+    invoke GetDateFormat, LOCALE_USER_DEFAULT, 0, ADDR LocalTime, NULL, ADDR buffer, 11
 
     ; print the date string to the console using printf
-    ;invoke printf, ADDR message, ADDR buffer
+    invoke printf, ADDR message, ADDR buffer
 
     ; open the clipboard and empty its contents
     invoke OpenClipboard, NULL
